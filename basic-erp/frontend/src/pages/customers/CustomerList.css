@@ -1,0 +1,40 @@
+/* src/pages/customers/CustomerList.css */
+.customer-list {
+  padding: 20px;
+}
+
+.customer-list h2 {
+  margin-bottom: 20px;
+}
+
+.customer-list .btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.customer-list .btn:hover {
+  background-color: #0056b3;
+}
+
+.customer-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.customer-list ul li {
+  margin-bottom: 10px;
+}
+
+.customer-list ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.customer-list ul li a:hover {
+  text-decoration: underline;
+}

@@ -1,11 +1,14 @@
+// src/pages/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Login.css';  // Ensure this import is here to apply the styles
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +17,16 @@ const Login = () => {
         email,
         password
       });
-      setMessage('Login successful!');
+
+      const { token, role } = res.data;
+      localStorage.setItem('token', token);
+      localStorage.setItem('role', role);
+
+      if (role === 'admin') {
+        navigate('/admin-dashboard');
+      } else {
+        navigate('/user-dashboard');
+      }
     } catch (err) {
       console.error(err);
       if (err.response && err.response.data) {

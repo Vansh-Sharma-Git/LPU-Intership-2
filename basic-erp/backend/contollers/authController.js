@@ -1,11 +1,10 @@
+// src/controllers/authController.js
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-
 require('dotenv').config();
 
 exports.register = async (req, res) => {
-  console.log(req.body);  // Log the request body for debugging
   const { name, username, email, password, role } = req.body;
   try {
     const existingUser = await User.findOne({ email });
@@ -48,8 +47,10 @@ exports.login = async (req, res) => {
     }
     user.lastActive = Date.now(); 
     await user.save();
+
     const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+    
+    res.json({ token, role: user.role });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

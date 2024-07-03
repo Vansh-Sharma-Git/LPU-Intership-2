@@ -1,0 +1,47 @@
+/* src/components/SalesForm.css */
+.sales-form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .sales-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sales-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sales-form form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .sales-form form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sales-form form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .sales-form p {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+  }
+  

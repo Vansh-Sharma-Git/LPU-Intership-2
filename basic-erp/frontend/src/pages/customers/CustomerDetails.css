@@ -1,0 +1,21 @@
+/* src/pages/customers/CustomerDetails.css */
+.customer-details {
+  padding: 20px;
+}
+
+.customer-details h2 {
+  margin-bottom: 20px;
+}
+
+.customer-details p {
+  margin: 5px 0;
+}
+
+.customer-details .btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}

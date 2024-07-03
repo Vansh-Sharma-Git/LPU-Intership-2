@@ -1,14 +1,17 @@
+// src/components/Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';  // Ensure this import is here to apply the styles
+import LogoutButton from './LogoutButton';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <ul className="nav-list">
-        <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-        <li className="nav-item"><Link className="nav-link" to="/register">Register</Link></li>
-        <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
+      <ul className="navbar-list">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/register">Register</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><LogoutButton /></li>
       </ul>
     </nav>
   );
