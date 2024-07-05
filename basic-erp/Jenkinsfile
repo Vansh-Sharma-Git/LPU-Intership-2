@@ -15,7 +15,7 @@ pipeline {
                     def backendPath = "basic-erp/backend"
                     if (fileExists(backendPath)) {
                         bat "docker build -t ${backendImage}:latest ${backendPath}"
-                        bat "docker tag ${backendImage} thepurpleaxe/mern-backend:mern-backend"
+                        bat "docker tag ${backendImage} vanshsharma987/mern-backend:mern-backend"
                         // bat "docker tag ${backendImage} ${backendImage}:latest"
 
                     } else {
@@ -31,7 +31,7 @@ pipeline {
                     def frontendPath = "basic-erp/frontend"
                     if (fileExists(frontendPath)) {
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}"
-                        bat "docker tag ${frontendImage} thepurpleaxe/mern-frontend:mern-frontend"
+                        bat "docker tag ${frontendImage} vanshsharma987/mern-frontend:mern-frontend"
                     } else {
                         error "Frontend directory ${frontendPath} not found"
                     }
