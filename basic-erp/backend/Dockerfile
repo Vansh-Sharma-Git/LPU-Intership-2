@@ -1,20 +1,20 @@
-# Use the official Node.js image.
-# https://hub.docker.com/_/node
+# Use an official Node.js runtime as a parent image
 FROM node:14
 
-# Create and change to the app directory.
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /app
 
-# Install app dependencies using the npm binary.
+# Copy package.json and package-lock.json
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-# Copy application code.
+# Copy the rest of the application
 COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5000
 
-# Start the server
-CMD ["node", "server.js"]
-
+# Start the application
+CMD ["npm", "start"]

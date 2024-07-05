@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Register.css';  // Ensure this import is here to apply the styles
+import { useNavigate } from 'react-router-dom';
+import './Register.css';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -9,6 +10,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Register = () => {
         role: isAdmin ? 'admin' : 'user'
       });
       setMessage('Registration successful!');
+      navigate('/login'); 
     } catch (err) {
       console.error(err);
       if (err.response && err.response.data) {
