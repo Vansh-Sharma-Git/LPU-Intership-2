@@ -46,7 +46,7 @@ pipeline {
                         // bat 'docker login -u thepurpleaxe -p FalconHeavy@01'
                         // bat 'docker push json101/javapp'
                         echo "Pushing backend image to Docker Hub"
-                        bat "docker push thepurpleaxe/mern-backend:${backendImage}"
+                        bat "docker push vanshsharma987/mern-backend:${backendImage}"
                     }
                 }
             }
@@ -57,7 +57,7 @@ pipeline {
                 script {
                     docker.withRegistry(dockerRegistry, 'dockerhub-credentials') {
                         echo "Pushing frontend image to Docker Hub"
-                        bat "docker push thepurpleaxe/mern-frontend:${frontendImage}"
+                        bat "docker push vanshsharma987/mern-frontend:${frontendImage}"
                         // bat "docker push ${frontendImage}:latest"
                     }
                 }
